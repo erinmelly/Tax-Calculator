@@ -1,0 +1,21 @@
+// Title: Pete 2020 proposals (that have an effect on saving)
+// Reform_File_Author: Erin Melly
+// Reform_Baseline: policy_current_law.json
+
+//	 - Reform_Parameter_Map:
+//   1: tax capital gains as ordinary income
+//   2: return top bracket to 39.6% (he does support a "higher" top bracket, though rate us hard to confirm through his site)
+//   3. eliminate dedcution for qualified business income
+
+
+{
+	"CG_nodiff": {"2020": true},
+	"II_rt7": {"2020": 0.396},
+    "II_brk6": {"2020": [400000.00, 450000.00, 225000.00, 425000.00, 450000.00], "2026":  [9e99, 9e99, 9e99, 9e99, 9e99]},
+   	"PT_qbid_rt": {"2020": 0},
+    "PT_qbid_taxinc_thd": {"2020": [0, 0, 0, 0, 0]},
+    "PT_qbid_taxinc_gap": {"2020": [1, 1, 1, 1, 1]},
+    "PT_qbid_w2_wages_rt": {"2020": 0},
+    "PT_qbid_alt_w2_wages_rt": {"2020": 0},
+    "PT_qbid_alt_property_rt": {"2020": 0},
+}
