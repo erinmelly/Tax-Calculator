@@ -787,7 +787,7 @@ def StdDed(DSI, earned, STD, age_head, age_spouse, STD_Aged, STD_Dep,
 def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
            e02100, e27200, e00650, c01000,
            PT_SSTB_income, PT_binc_w2_wages, PT_ubia_property,
-           PT_qbid_rt, PT_qbid_taxinc_thd, PT_qbid_taxinc_gap,
+           PT_qbid_rt, PT_qbid_taxinc_thd, PT_dedcap_thd, PT_qbid_taxinc_gap,
            PT_qbid_w2_wages_rt,
            PT_qbid_alt_w2_wages_rt, PT_qbid_alt_property_rt,
            c04800, qbided):
