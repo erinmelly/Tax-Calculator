@@ -4076,7 +4076,7 @@
         "indexable": false,
         "indexed": false,
         "vi_name": "",
-        "vi_vals": [],
+        "vi_vals": [ "single", "mjoint", "mseparate", "headhh", "widow"],
         "value_type": "real",
         "value": [[9e99, 9e99, 9e99, 9e99, 9e99],
                   [9e99, 9e99, 9e99, 9e99, 9e99],
