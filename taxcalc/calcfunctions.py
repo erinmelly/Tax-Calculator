@@ -834,7 +834,7 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
         # apply taxinc cap (assuning cap rate is equal to PT_qbid_rt)
         net_cg = e00650 + c01000  # per line 34 in 2018 Pub 535 Worksheet 12-A
         taxinc_cap = PT_qbid_rt * max(0., pre_qbid_taxinc - net_cg)
-    if pre_qbid_taxin > PT_dedcap_thd:
+    if pre_qbid_taxinc > PT_dedcap_thd:
         qbided = 0.
     else:
         qbided = min(qbided, taxinc_cap)
