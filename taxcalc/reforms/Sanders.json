@@ -1,0 +1,25 @@
+// Title: Sanders 2020 proposals (that have an effect on saving)
+// Reform_File_Author: Erin Melly
+// Reform_Baseline: policy_current_law.json
+
+//	 - Reform_Parameter_Map:
+//   1: apply payroll taxes to capital gains and dividens above $250,000
+//   2: repeal section 199A
+//   3. tax capital gains and dividends as ordinary income for those above $250,000
+//   4. cap itemized deductions at 28%
+
+
+
+{
+	"NIIT_rt": {"2020": 0.162}, // adding payroll tax (0.124) to current net investment tax (.038)
+    "PT_qbid_rt": {"2020": 0},
+    "PT_qbid_taxinc_thd": {"2020": [0, 0, 0, 0, 0]},
+    "PT_qbid_taxinc_gap": {"2020": [1, 1, 1, 1, 1]},
+    "PT_qbid_w2_wages_rt": {"2020": 0},
+    "PT_qbid_alt_w2_wages_rt": {"2020": 0},
+    "PT_qbid_alt_property_rt": {"2020": 0},
+    "CG_brk3": {"2020": [250000, 250000, 250000, 250000, 250000]},
+    "CG_rt4": {"2020": 0.396},
+    "ID_AmountCap_rt": {"2020": 0.28},
+    "ID_AmountCap_Switch": {"2020": [true, true, true, true, true, true, true]}
+}
