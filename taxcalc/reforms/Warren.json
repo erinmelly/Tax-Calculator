@@ -1,0 +1,21 @@
+// Title: Warren 2020 proposals (that have an effect on saving)
+// Reform_File_Author: Erin Melly
+// Reform_Baseline: policy_current_law.json
+
+//	 - Reform_Parameter_Map:
+//   1: alter NIIT to reflect new 14.8% social security contribution on net investment income for those with income above $250,000
+//   2: Repeal TCJA for households for "wealthy taxpayers" (top income and pass through brackets/rates restored to pre-TCJA)
+//   3. Repeal TCJA for households for "wealthy taxpayers" (repeal section 199A for top bracket)
+//   4: Tax capital gains as ordinary income
+
+
+{
+	"NIIT_rt": {"2020": 0.148},
+	"NIIT_PT_taxed": {"2020": true},
+	"II_rt7": {"2020": 0.396},
+    "II_brk6": {"2020": [400000.00, 450000.00, 225000.00, 425000.00, 450000.00], "2026":  [9e99, 9e99, 9e99, 9e99, 9e99]},
+    "PT_brk6": {"2020": [400000.00, 450000.00, 225000.00, 425000.00, 450000.00], "2026":  [9e99, 9e99, 9e99, 9e99, 9e99]},
+    "PT_rt7": {"2020": 0.396},
+    "PT_dedcap_thd": {"2020": [400000.00, 450000.00, 225000.00, 425000.00, 450000.00]},
+    "CG_nodiff": {"2020": true}
+}
