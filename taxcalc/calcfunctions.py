@@ -835,7 +835,7 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
         net_cg = e00650 + c01000  # per line 34 in 2018 Pub 535 Worksheet 12-A
         taxinc_cap = PT_qbid_rt * max(0., pre_qbid_taxinc - net_cg)
     if pre_qbid_taxinc > PT_dedcap_thd[MARS-1]:
-        qbided = max(0., taxinc_cap - PT_dedcap_rt*max(0., pre_qbid_taxinc - PT_dedcap_thd))
+        qbided = max(0., taxinc_cap - PT_dedcap_rt*max(0., pre_qbid_taxinc - PT_dedcap_thd[MARS-1]))
     else:
         qbided = min(qbided, taxinc_cap)
     # calculate taxable income after qualified business income deduction
