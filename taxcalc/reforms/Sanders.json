@@ -3,10 +3,13 @@
 // Reform_Baseline: policy_current_law.json
 
 //	 - Reform_Parameter_Map:
-//   1: apply payroll taxes to capital gains and dividens above $250,000
-//   2: repeal section 199A
-//   3. tax capital gains and dividends as ordinary income for those above $250,000
-//   4. cap itemized deductions at 28%
+//   1: Apply payroll taxes to capital gains and dividends above $250,000
+//   2: Repeal section 199A
+
+//   3. Tax capital gains and dividends as ordinary income for those between $250,000 to $1,000,000 and at 52% for gains above $1,000,000
+//   4. 4% income tax increase for all brackets, exempting first $29,000 for family of four; and, income above $10 million taxed at 52%
+//   5. Cap itemized deductions at 28% and/or $50,000
+//   6. Repeal SALT cap
 
 
 
@@ -19,8 +22,20 @@
     "PT_qbid_alt_w2_wages_rt": {"2020": 0},
     "PT_qbid_alt_property_rt": {"2020": 0},
     "CG_brk2": {"2020": [250000, 250000, 250000, 250000, 250000]},
-    "CG_brk3": {"2020": [9e99, 9e99, 9e99, 9e99, 9e99]},
-    "CG_rt3": {"2020": 0.396},
+    "CG_rt3": {"2020": 0.36},
+    "CG_brk3": {"2020": [520708.32, 520708.32, 520708.32, 520708.32, 520708.32]},
+    "CG_rt4": {"2020": 0.41},
+    "CG_brk4": {"2020": [1000000, 1000000, 1000000, 1000000, 1000000]},
+    "CG_rt5": {"2020": 0.52},
+    "II_rt3": {"2020": 0.26},
+    "II_rt4": {"2020": 0.28},
+    "II_rt5": {"2020": 0.36},
+    "II_rt6": {"2020": 0.39},
+    "II_rt7": {"2020": 0.41},
+    "II_brk7": {"2020": [10000000, 10000000, 10000000, 10000000, 10000000]},
+    "II_rt8": {"2020": 0.52},
     "ID_AmountCap_rt": {"2020": 0.28},
-    "ID_AmountCap_Switch": {"2020": [true, true, true, true, true, true, true]}
+    "ID_AmountCap_Switch": {"2020": [true, true, true, true, true, true, true]},
+    "ID_c": {"2020": [50000, 50000, 50000, 50000, 50000]},
+    "ID_AllTaxes_c": {"2020": [9e99, 9e99, 9e99, 9e99, 9e99]}
 }
