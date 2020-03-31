@@ -789,7 +789,7 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
            PT_SSTB_income, PT_binc_w2_wages, PT_ubia_property,
            PT_qbid_rt, PT_qbid_taxinc_thd, PT_dedcap_thd, PT_dedcap_rt, 
            PT_qbid_taxinc_gap, PT_qbid_w2_wages_rt,
-           PT_qbid_alt_w2_wages_rt, PT_qbid_alt_property_rt,
+           PT_qbid_alt_w2_wages_rt, PT_qbid_alt_property_rt, ID_Biden_Limit, II_brk5,
            c04800, qbided, taxbc):
     """
     Calculates taxable income, c04800, and
@@ -797,7 +797,7 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
 
     """
     # Limit itemized deductions if ID_Biden_Limit is switched on
-    if ID_Biden_Limit==1:
+    if ID_Biden_Limit is True:
         # step 1: Calculate pre-deduction income
         pre_item_ded_inc = c04800 + c04470 - II_brk5[MARS-1]
         # Step 2: Find the amount in excess of the 28% rate
@@ -807,7 +807,10 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
             amt_over = 0
         c04800 = c04800 + amt_over
         # Step 3: Calculate taxes as normal, but then subtract out 28% of the amount over the 28% bracket
-        taxbc = taxbc - 0.28 * amt_over  
+        taxbc = taxbc - 0.28 * amt_over
+    else:
+        c04800 = c04800
+        taxbc = taxbc  
 
     # calculate taxable income before qualified business income deduction
     pre_qbid_taxinc = max(0., c00100 - max(c04470, standard) - c04600)
