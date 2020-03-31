@@ -8,7 +8,7 @@
 //      b. repeal section 199A for top bracket) (phasing this cap out)
 //      c. Add Pease Limitation (pre-TCJA)
 //   2: Tax capital gains as ordinary income for taxpayers with income over $1 million
-//   3. Limit itemized dedcutions to 28%
+//   3. Limit itemized dedcutions using ID_Biden_Limit parameter
 
 {
 	"II_brk5": {"2020": [416700.00, 416700.00, 208350.00, 416700.00, 416700.00]},
@@ -25,5 +25,6 @@
     "ID_prt": {"2020": 0.03},
     "ID_crt": {"2020": 0.8},
     "CG_brk4": {"2020": [1000000, 1000000, 1000000, 1000000, 1000000]},
-    "CG_rt4": {"2020": 0.396}
+    "CG_rt4": {"2020": 0.396},
+    "ID_Biden_Limit": {"2020": false}
 }

@@ -2266,6 +2266,26 @@
         "compatible_data": {"puf": true, "cps": true}
     },
 
+    "ID_Biden_Limit": {
+        "long_name": "Deductions subject to the 28% limitation as outlined by Joe Biden's plan",
+        "description": "Itemized deductions + taxable income above the 28% (i.e. fifth bracket) threshold subject to limitation",
+        "section_1": "Itemized Deductions",
+        "section_2": "Biden's Limit On The Amount Of Itemized Deductions Allowed",
+        "irs_ref": "",
+        "notes": "",
+        "value_yrs": [2013],
+        "indexable": false,
+        "indexed": false,
+        "vi_name": "",
+        "vi_vals": [],
+        "value_type": "boolean",
+        "value": [false],
+        "valid_values": {"min": false, "max": true},
+        "invalid_minmsg": "",
+        "invalid_maxmsg": "",
+        "invalid_action": "stop",
+        "compatible_data": {"puf": true, "cps": true}
+    },
     "CG_rt1": {
         "long_name": "Long term capital gain and qualified dividends (regular/non-AMT) rate 1",
         "description": "The capital gain and dividends (stacked on top of regular income) that are below threshold 1 are taxed at this rate.",

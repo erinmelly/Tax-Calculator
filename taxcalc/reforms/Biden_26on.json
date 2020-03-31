@@ -2,12 +2,13 @@
 // Reform_File_Author: Erin Melly
 // Reform_Baseline: policy_current_law.json
 
-//	 - Reform_Parameter_Map:
-//   1: Cap itemized deductions at 28%
+//	 - Reform_Parameter_Map (for 2026 through 2030):
+//   1: Limit itemized deductions using ID_Biden_Limit
 //   2: Tax capital gains as ordinary income for taxpayers with income over $1 million
 
 
 {
+    "ID_Biden_Limit": {"2020": false},
     "CG_brk4": {"2026": [1000000, 1000000, 1000000, 1000000, 1000000]},
     "CG_rt3": {"2026": 0.396}
 }
