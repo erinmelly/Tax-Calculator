@@ -995,27 +995,32 @@ def GainsTax(e00650, c01000, c23650, p23250, e01100, e58990, e00200,
         dwks12 = min(dwks9, dwks11)
         dwks13 = dwks10 - dwks12
         dwks14 = max(0., dwks1 - dwks13)
-        dwks16 = min(CG_brk1[MARS - 1], dwks1)
+        dwks16 = min(CG_brk1[MARS - 1], dwks1) # compare stacked income (i.e. dwks1) to brk1
         dwks17 = min(dwks14, dwks16)
         dwks18 = max(0., dwks1 - dwks10)
         dwks19 = max(dwks17, dwks18)
         dwks20 = dwks16 - dwks17
-        lowest_rate_tax = CG_rt1 * dwks20
+        lowest_rate_tax = CG_rt1 * dwks20 # tax liability at rt1
         # break in worksheet lines
-        dwks21 = min(dwks1, dwks13)
-        dwks22 = dwks20
-        dwks23 = max(0., dwks21 - dwks22)
-        dwks25 = min(CG_brk2[MARS - 1], dwks1)
-        dwks26 = dwks19 + dwks20
-        dwks27 = max(0., dwks25 - dwks26)
-        dwks28 = min(dwks23, dwks27)
-        dwks29 = CG_rt2 * dwks28
-        dwks30 = dwks22 + dwks28
-        dwks31 = dwks21 - dwks30
-        dwks32 = CG_rt3 * dwks31
-        hi_base = max(0., dwks31 - CG_brk3[MARS - 1])
-        hi_incremental_rate = CG_rt4 - CG_rt3
-        highest_rate_incremental_tax = hi_incremental_rate * hi_base
+        dwks21 = min(dwks1, dwks13) # compare total cg amount to stacked tax inc
+        dwks22 = dwks20 # amount taxed at rt1
+        dwks23 = max(0., dwks21 - dwks22) # amount to be taxed above rt1
+        dwks25 = min(CG_brk2[MARS - 1], dwks1) # compare brk2 to stacked income
+        dwks26 = dwks19 + dwks20 
+        dwks27 = max(0., dwks25 - dwks26) 
+        dwks28 = min(dwks23, dwks27) # amount taxed at rt2
+        dwks29 = CG_rt2 * dwks28 # tax liability from rt2
+        dwks30 = dwks22 + dwks28 # total rt1 and rt2 tax liability
+        dwks31 = dwks21 - dwks30 # amount cg still untaxed
+        dwks32 = CG_rt3 * dwks31 # rt3 tax liability 
+        hi_base = max(0., dwks31 - CG_brk3[MARS - 1]) # remainng cg amt to be taxed above brk3
+        hi_incremental_rate = CG_rt4 - CG_rt3 # additional burden for cg above brk3 (and below brk4)
+        highest_rate_incremental_tax = hi_incremental_rate * hi_base # multiplies the additional percentage burden to amt above brk3
+        #start addition of CG_brk4 and CG_rt5
+        hi_base2 = max(0., hi_base - CG_brk4[MARS - 1]) # cg amt btwn brk3 and brk4
+        hi_incremental_rate2 = CG_rt5 - CG_rt4 # additional burden for income above brk4
+        highest_rate_incremental_tax2 = hi_incremental_rate2 * hi_base2 # multiples the additional percentage burden to amt above brk4
+        #end addition
         # break in worksheet lines
         dwks33 = min(dwks9, e24518)
         dwks34 = dwks10 + dwks19
@@ -1038,7 +1043,7 @@ def GainsTax(e00650, c01000, c23650, p23250, e01100, e58990, e00200,
                         PT_EligibleRate_passive, PT_wages_active_income,
                         PT_top_stacking)
         dwks43 = (dwks29 + dwks32 + dwks38 + dwks41 + dwks42 +
-                  lowest_rate_tax + highest_rate_incremental_tax)
+                  lowest_rate_tax + highest_rate_incremental_tax + highest_rate_incremental_tax2)
         dwks44 = c05200
         dwks45 = min(dwks43, dwks44)
         c24580 = dwks45

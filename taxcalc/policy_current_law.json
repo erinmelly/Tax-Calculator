@@ -2495,7 +2495,7 @@
 
     },
 
-    "CG_rt4": {
+    "CG_rt5": {
         "long_name": "Long term capital gain and qualified dividends (regular/non-AMT) rate 5",
         "description": "The capital gain and dividends (stacked on top of regular income) that are above threshold 4 are taxed at this rate.",
         "section_1": "Capital Gains And Dividends",
