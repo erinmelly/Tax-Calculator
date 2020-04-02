@@ -956,7 +956,7 @@ def GainsTax(e00650, c01000, c23650, p23250, e01100, e58990, e00200,
              PT_brk1, PT_brk2, PT_brk3, PT_brk4, PT_brk5, PT_brk6, PT_brk7,
              CG_nodiff, PT_EligibleRate_active, PT_EligibleRate_passive,
              PT_wages_active_income, PT_top_stacking,
-             CG_rt1, CG_rt2, CG_rt3, CG_rt4, CG_brk1, CG_brk2, CG_brk3,
+             CG_rt1, CG_rt2, CG_rt3, CG_rt4, CG_rt5, CG_brk1, CG_brk2, CG_brk3, CG_brk4,
              dwks10, dwks13, dwks14, dwks19, c05700, taxbc):
     """
     GainsTax function implements (2015) Schedule D Tax Worksheet logic for
