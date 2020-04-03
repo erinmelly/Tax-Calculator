@@ -4,6 +4,41 @@ Go [here](https://github.com/PSLmodels/Tax-Calculator/pulls?q=is%3Apr+is%3Aclose
 for a complete commit history.
 
 
+2020-03-18 Release 2.9.0
+------------------------
+(last merged pull request is
+[#2405](https://github.com/PSLmodels/Tax-Calculator/pull/2405))
+
+**This is an enhancement and bug-fix release.**
+
+**API Changes**
+- None
+
+**New Features**
+- Update to January 2020 CBO economic projections [[#2403](https://github.com/PSLmodels/Tax-Calculator/pull/2403) by Peter Metz]
+
+**Bug Fixes**
+- Reinstate personal exemption phaseout (PEP) in 2026 [[#2402](https://github.com/PSLmodels/Tax-Calculator/pull/2402)
+  by Peter Metz and identified by Peter Metz]
+
+2020-02-28 Release 2.8.0
+------------------------
+(last merged pull request is
+[#2400](https://github.com/PSLmodels/Tax-Calculator/pull/2400))
+
+**This is an enhancement release.**
+
+**API Changes**
+- None
+
+**New Features**
+- Allows users a greater range when modifying input data with Tax-Calculator's growdiff capabilities [[#2397](https://github.com/PSLmodels/Tax-Calculator/pull/2397) by Peter Metz]
+- Update 2019 policy parameters with IRS published values [[#2399](https://github.com/PSLmodels/Tax-Calculator/pull/2399)
+  by Peter Metz]
+
+**Bug Fixes**
+-None
+
 2019-12-13 Release 2.7.0
 ------------------------
 (last merged pull request is
