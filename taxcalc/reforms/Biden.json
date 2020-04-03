@@ -2,7 +2,6 @@
 // Reform_File_Author: Erin Melly
 // Reform_Baseline: policy_current_law.json
 
-<<<<<<< HEAD
 //	 - Reform_Parameter_Map (for 2020 through 2025):
 //   1: Repeal TCJA for households with income over $400,000:
 //      a. pre-TCJA levels for top income and pass through brackets/rates restored to pre-TCJA)
@@ -28,23 +27,4 @@
     "CG_brk4": {"2020": [1000000, 1000000, 1000000, 1000000, 1000000]},
     "CG_rt3": {"2020": 0.396},
     "ID_Biden_Limit": {"2020": true}
-=======
-//	 - Reform_Parameter_Map:
-//   1: Repeal TCJA for households with income over $400,000 (top income and pass through brackets/rates restored to pre-TCJA)
-//   2: cap itemized deductions at 28%
-//   3: tax capital gains as ordinary income for taxpayers with income over $1 million (Q: assuming 1 million across all marital status?)
-//   4. Repeal TCJA for households with income over $400,000 (repeal section 199A for top bracket)
-
-
-{
-	"II_rt7": {"2020": 0.396},
-    "II_brk6": {"2020": [400000.00, 450000.00, 225000.00, 425000.00, 450000.00], "2026":  [9e99, 9e99, 9e99, 9e99, 9e99]},
-    "PT_brk6": {"2020": [400000.00, 450000.00, 225000.00, 425000.00, 450000.00], "2026":  [9e99, 9e99, 9e99, 9e99, 9e99]},
-    "PT_rt7": {"2020": 0.396},
-    "ID_AmountCap_rt": {"2020": 0.28},
-    "ID_AmountCap_Switch": {"2020": [true, true, true, true, true, true, true]},
-    "CG_brk3": {"2020": [1000000, 1000000, 1000000, 1000000, 1000000]},
-    "CG_rt4": {"2020": 0.396},
-    "PT_dedcap_thd": {"2020": [400000.00, 450000.00, 225000.00, 425000.00, 450000.00]}
->>>>>>> master
 }
