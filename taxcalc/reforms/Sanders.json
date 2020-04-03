@@ -12,6 +12,14 @@
 
 
 {
+	"NIIT_rt": {"2020": 0.162}, // adding payroll tax (0.124) to current net investment tax (.038)
+    "PT_qbid_rt": {"2020": 0},
+    "PT_qbid_taxinc_thd": {"2020": [0, 0, 0, 0, 0]},
+    "PT_qbid_taxinc_gap": {"2020": [1, 1, 1, 1, 1]},
+    "PT_qbid_w2_wages_rt": {"2020": 0},
+    "PT_qbid_alt_w2_wages_rt": {"2020": 0},
+    "PT_qbid_alt_property_rt": {"2020": 0},
+    "CG_brk2": {"2020": [250000, 250000, 250000, 250000, 250000]},
     "CG_rt3": {"2020": 0.36},
     "CG_brk3": {"2020": [520708.32, 520708.32, 520708.32, 520708.32, 520708.32]},
     "CG_rt4": {"2020": 0.41},
