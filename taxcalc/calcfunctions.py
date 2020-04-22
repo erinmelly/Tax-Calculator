@@ -1373,6 +1373,7 @@ def ChildDepTaxCredit(n24, MARS, c00100, XTOT, num, c05800,
 def PersonalTaxCredit(MARS, c00100,
                       II_credit, II_credit_ps, II_credit_prt,
                       II_credit_nr, II_credit_nr_ps, II_credit_nr_prt,
+                      II_credit_IRADC_rt, e03150, e03300,
                       personal_refundable_credit,
                       personal_nonrefundable_credit):
     """
@@ -1396,7 +1397,7 @@ def PersonalTaxCredit(MARS, c00100,
     if II_credit_IRADC_rt > 0.:
         IRADC = e03150 + e03300
         IRADC_credit_amt = (II_credit_IRADC_rt * IRADC)
-        personal_refundable_credit =+ IRADC_credit_amt
+        personal_refundable_credit += IRADC_credit_amt
     return (personal_refundable_credit, personal_nonrefundable_credit)
 
 
