@@ -1038,6 +1038,27 @@
         "compatible_data": {"puf": true, "cps": true}
     },
 
+        "II_credit_IRADC_rt": {
+        "long_name": "Percent of IRA/DC plan contributions given as a refundable credit",
+        "description": "As proposed by Biden, this is to be used when instating the IRA/SEP haircut parameters.",
+        "section_1": "Refundable Credits",
+        "section_2": "Personal Refundable Credit",
+        "irs_ref": "",
+        "notes": "",
+        "value_yrs": [2013],
+        "indexable": false,
+        "indexed": false,
+        "vi_name": "",
+        "vi_vals": [],
+        "value_type": "real",
+        "value": [0.0],
+        "valid_values": {"min": 0, "max": 1.0},
+        "invalid_minmsg": "",
+        "invalid_maxmsg": "",
+        "invalid_action": "stop",
+        "compatible_data": {"puf": true, "cps": true}
+    },
+
     "II_credit": {
         "long_name": "Personal refundable credit maximum amount",
         "description": "This credit amount is fully refundable and is phased out based on AGI. It is available to tax units who would otherwise not file.",

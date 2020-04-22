@@ -1310,6 +1310,7 @@ def RefundablePayrollTaxCredit(was_plus_sey_p, was_plus_sey_s,
     rptc_p = min(was_plus_sey_p * RPTC_rt, RPTC_c)
     rptc_s = min(was_plus_sey_s * RPTC_rt, RPTC_c)
     rptc = rptc_p + rptc_s
+
     return (rptc_p, rptc_s, rptc)
 
 
@@ -1390,6 +1391,12 @@ def PersonalTaxCredit(MARS, c00100,
         pout = II_credit_nr_prt * (c00100 - II_credit_nr_ps[MARS - 1])
         fully_phasedout = personal_nonrefundable_credit - pout
         personal_nonrefundable_credit = max(0., fully_phasedout)
+    # add refundable credit for amount of deductible IRA/DC contribution amount, as proposed by Biden
+    # used with turning IRA and SEP haircuts on, then adding a refundable credit in place of deductibility
+    if II_credit_IRADC_rt > 0.:
+        IRADC = e03150 + e03300
+        IRADC_credit_amt = (II_credit_IRADC_rt * IRADC)
+        personal_refundable_credit =+ IRADC_credit_amt
     return (personal_refundable_credit, personal_nonrefundable_credit)
 
 
