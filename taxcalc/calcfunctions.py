@@ -1373,7 +1373,6 @@ def ChildDepTaxCredit(n24, MARS, c00100, XTOT, num, c05800,
 def PersonalTaxCredit(MARS, c00100,
                       II_credit, II_credit_ps, II_credit_prt,
                       II_credit_nr, II_credit_nr_ps, II_credit_nr_prt,
-                      II_credit_IRADC_rt, e03150, e03300,
                       personal_refundable_credit,
                       personal_nonrefundable_credit):
     """
@@ -1392,13 +1391,24 @@ def PersonalTaxCredit(MARS, c00100,
         pout = II_credit_nr_prt * (c00100 - II_credit_nr_ps[MARS - 1])
         fully_phasedout = personal_nonrefundable_credit - pout
         personal_nonrefundable_credit = max(0., fully_phasedout)
-    # add refundable credit for amount of deductible IRA/DC contribution amount, as proposed by Biden
-    # used with turning IRA and SEP haircuts on, then adding a refundable credit in place of deductibility
-    if II_credit_IRADC_rt > 0.:
-        IRADC = e03150 + e03300
-        IRADC_credit_amt = (II_credit_IRADC_rt * IRADC)
-        personal_refundable_credit += IRADC_credit_amt
     return (personal_refundable_credit, personal_nonrefundable_credit)
+
+
+@iterate_jit(nopython=True)
+def IRADCTaxCredit(MARS, c00100, IRADC_credit_rt, e03150, e03300, IRADC_credit_amt):
+    """
+    Computes refundable credit that is equal to a percentage of IRA/DC contributions amount.
+    Designed to be used when IRA/DC haircuts turned on, as a refundable credit instead of deductabilitygit . 
+    As per VP Biden's tax proposal, not part of current-law policy
+
+    """
+    # calculate personal refundable credit amount with phase-out
+    IRADC = e03150 + e03300
+    if IRADC_credit_rt > 0.:
+        IRADC_credit_amt = (IRADC_credit_rt * IRADC)
+    else:
+        IRADC_credit_amt = 0.
+    return (IRADC_credit_amt)
 
 
 @iterate_jit(nopython=True)
@@ -1752,14 +1762,14 @@ def CTC_new(CTC_new_c, CTC_new_rt, CTC_new_c_under5_bonus,
 
 @iterate_jit(nopython=True)
 def IITAX(c59660, c11070, c10960, personal_refundable_credit, ctc_new, rptc,
-          c09200, payrolltax,
-          eitc, refund, iitax, combined):
+          c09200, payrolltax, 
+          eitc, refund, iitax, combined, IRADC_credit_amt):
     """
     Computes final taxes.
     """
     eitc = c59660
     refund = (eitc + c11070 + c10960 +
-              personal_refundable_credit + ctc_new + rptc)
+              personal_refundable_credit + ctc_new + rptc + IRADC_credit_amt)
     iitax = c09200 - refund
     combined = iitax + payrolltax
     return (eitc, refund, iitax, combined)

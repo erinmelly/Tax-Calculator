@@ -1038,11 +1038,11 @@
         "compatible_data": {"puf": true, "cps": true}
     },
 
-        "II_credit_IRADC_rt": {
+    "IRADC_credit_rt": {
         "long_name": "Percent of IRA/DC plan contributions given as a refundable credit",
         "description": "As proposed by Biden, this is to be used when instating the IRA/SEP haircut parameters.",
         "section_1": "Refundable Credits",
-        "section_2": "Personal Refundable Credit",
+        "section_2": "",
         "irs_ref": "",
         "notes": "",
         "value_yrs": [2013],

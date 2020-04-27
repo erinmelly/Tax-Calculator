@@ -31,7 +31,6 @@
     "EITC_MaxEligAge": {"2020": 125},
     "SS_Earnings_thd": {"2020": 400000},
     "CR_ResidentialEnergy_hc": {"2020": 0.0},
-
     "ALD_IRAContributions_hc": {"2020": 1.0},
     "ALD_KEOGH_SEP_hc": {"2020": 1.0},
     "II_credit_IRADC_rt": {"2020": 0.26}

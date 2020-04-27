@@ -1045,6 +1045,11 @@
       "desc": "Personal nonrefundable credit",
       "form": {"2013-20??": "calculated variable"}
     },
+    "IRADC_credit_amt": {
+      "type": "float",
+      "desc": "IRA/DC contribution refundable credit, Biden proposal",
+      "form": {"2013-20??": "calculated variable"}
+    },
     "charity_credit": {
       "type": "float",
       "desc": "Credit for charitable giving",
