@@ -787,35 +787,26 @@ def StdDed(DSI, earned, STD, age_head, age_spouse, STD_Aged, STD_Dep,
 def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
            e02100, e27200, e00650, c01000,
            PT_SSTB_income, PT_binc_w2_wages, PT_ubia_property,
-           PT_qbid_rt, PT_qbid_taxinc_thd, PT_dedcap_thd, PT_dedcap_rt, 
-           PT_qbid_taxinc_gap, PT_qbid_w2_wages_rt,
-           PT_qbid_alt_w2_wages_rt, PT_qbid_alt_property_rt, ID_Biden_Limit, II_brk5,
-           c04800, qbided, taxbc):
+           PT_qbid_rt, PT_qbid_taxinc_thd, PT_qbid_taxinc_gap, 
+           PT_qbid_w2_wages_rt,
+           PT_qbid_alt_w2_wages_rt, PT_qbid_alt_property_rt,
+           c04800, qbided):
     """
     Calculates taxable income, c04800, and
     qualified business income deduction, qbided.
 
-    """
-    # Limit itemized deductions if ID_Biden_Limit is switched on
-    if ID_Biden_Limit is True:
-        # step 1: Calculate pre-deduction income
-        pre_item_ded_inc = c04800 + c04470 - II_brk5[MARS-1]
-        # Step 2: Find the amount in excess of the 28% rate
-        if pre_item_ded_inc > 0:
-            amt_over = min(pre_item_ded_inc, c04470)
-        else:
-            amt_over = 0
-        c04800 = c04800 + amt_over
-        # Step 3: Calculate taxes as normal, but then subtract out 28% of the amount over the 28% bracket
-        taxbc = taxbc - 0.28 * amt_over
-    else:
-        c04800 = c04800
-        taxbc = taxbc  
-
+    """ 
     # calculate taxable income before qualified business income deduction
     pre_qbid_taxinc = max(0., c00100 - max(c04470, standard) - c04600)
     # calculate qualified business income deduction
+    qbided = 0.
     qbinc = max(0., e00900 + e26270 + e02100 + e27200)
+    # EM EDIT
+    qbided_full = qbinc * PT_qbid_rt
+    if pre_qbid_taxinc < PT_qbid_taxinc_thd:
+        qbided = qbided_full
+    else:
+        qbided = max(0., qbided * (1 - (pre_qbid_taxinc - PT_qbid_taxinc_thd[MARS-1])/ PT_qbid_taxinc_gap[MARS-1]))
     """
     if qbinc > 0. and PT_qbid_rt > 0.:
         qbid_before_limits = qbinc * PT_qbid_rt
@@ -848,18 +839,12 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
                     prt = (pre_qbid_taxinc - lower_thd) / pre_qbid_taxinc_gap
                     adj = prt * (qbid_adjusted - cap_adjusted)
                     qbided = qbid_adjusted - adj
-        """
+        
     # apply taxinc cap (assuning cap rate is equal to PT_qbid_rt)
-    #net_cg = e00650 + c01000  # per line 34 in 2018 Pub 535 Worksheet 12-A
-    #taxinc_cap = PT_qbid_rt * max(0., pre_qbid_taxinc - net_cg)
-    qbided_full = PT_qbid_rt * max(0., qbinc)
-    if PT_dedcap_thd[MARS-1] > 0.:
-        if pre_qbid_taxinc > PT_dedcap_thd[MARS-1]:
-            qbided = max(0., qbided_full - (PT_dedcap_rt * max(0., pre_qbid_taxinc - PT_dedcap_thd[MARS-1])))
-        else:
-            qbided = qbided_full
-    else:
-        qbided = PT_qbid_rt * max(0., qbinc)
+    net_cg = e00650 + c01000  # per line 34 in 2018 Pub 535 Worksheet 12-A
+    taxinc_cap = PT_qbid_rt * max(0., pre_qbid_taxinc - net_cg)
+    qbided = min(qbided, taxinc_cap)
+    """
     # calculate taxable income after qualified business income deduction
     c04800 = max(0., pre_qbid_taxinc - qbided)
     return (c04800, qbided)

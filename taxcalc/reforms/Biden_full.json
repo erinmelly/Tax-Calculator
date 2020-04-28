@@ -9,7 +9,7 @@
 // 8. replace deductibility of IRA/DC pension contributions with 26% credit (IRADC_credit_rt)
 // 9. reinstate energy efficiency credit
 
-// Parameters created non-parametrically: PT_dedcap_thd, PT_dedcap_rt, IRADC_credit_rt
+// Parameters created non-parametrically: IRADC_credit_rt
 
 {
     "II_brk5": {"2020": [416700.00, 416700.00, 208350.00, 416700.00, 416700.00]},
@@ -23,8 +23,8 @@
     "ID_ps": {"2020": [261500.0, 313800.0, 156900.0, 287650.0, 313800.0]},
     "ID_prt": {"2020": 0.03},
     "ID_crt": {"2020": 0.8},
-    "PT_dedcap_thd": {"2020": [400000.00, 450000.00, 225000.00, 425000.00, 450000.00]},
-    "PT_dedcap_rt": {"2020": 0.60},
+    "PT_qbid_taxinc_thd": {"2020": [400000.00, 400000.00, 400000.00, 400000.00, 400000.00]},
+    "PT_qbid_taxinc_gap": {"2020": [100000.0, 100000.0, 100000.0, 100000.0, 100000.00]},
     "CG_brk4": {"2020": [1000000, 1000000, 1000000, 1000000, 1000000]},
     "CG_rt3": {"2020": 0.396},
     "EITC_MaxEligAge": {"2020": 125},
