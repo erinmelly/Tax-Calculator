@@ -803,7 +803,7 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
     qbinc = max(0., e00900 + e26270 + e02100 + e27200)
     # EM EDIT
     qbided_full = qbinc * PT_qbid_rt
-    if pre_qbid_taxinc < PT_qbid_taxinc_thd:
+    if pre_qbid_taxinc < PT_qbid_taxinc_thd[MARS-1]:
         qbided = qbided_full
     else:
         qbided = max(0., qbided * (1 - (pre_qbid_taxinc - PT_qbid_taxinc_thd[MARS-1])/ PT_qbid_taxinc_gap[MARS-1]))
