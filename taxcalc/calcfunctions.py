@@ -803,10 +803,10 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
     qbinc = max(0., e00900 + e26270 + e02100 + e27200)
     # EM EDIT
     qbided_full = qbinc * PT_qbid_rt
-    if pre_qbid_taxinc < PT_qbid_taxinc_thd[MARS-1]:
+    if pre_qbid_taxinc <= PT_qbid_taxinc_thd[MARS-1]:
         qbided = qbided_full
     else:
-        qbided = max(0., qbided * (1 - (pre_qbid_taxinc - PT_qbid_taxinc_thd[MARS-1])/ PT_qbid_taxinc_gap[MARS-1]))
+        qbided = max(0., qbided_full * (1 - (pre_qbid_taxinc - PT_qbid_taxinc_thd[MARS-1])/ PT_qbid_taxinc_gap[MARS-1]))
     """
     if qbinc > 0. and PT_qbid_rt > 0.:
         qbid_before_limits = qbinc * PT_qbid_rt
@@ -839,12 +839,11 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
                     prt = (pre_qbid_taxinc - lower_thd) / pre_qbid_taxinc_gap
                     adj = prt * (qbid_adjusted - cap_adjusted)
                     qbided = qbid_adjusted - adj
-        
+        """
     # apply taxinc cap (assuning cap rate is equal to PT_qbid_rt)
     net_cg = e00650 + c01000  # per line 34 in 2018 Pub 535 Worksheet 12-A
     taxinc_cap = PT_qbid_rt * max(0., pre_qbid_taxinc - net_cg)
     qbided = min(qbided, taxinc_cap)
-    """
     # calculate taxable income after qualified business income deduction
     c04800 = max(0., pre_qbid_taxinc - qbided)
     return (c04800, qbided)
