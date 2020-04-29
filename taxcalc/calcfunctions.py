@@ -803,10 +803,13 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
     qbinc = max(0., e00900 + e26270 + e02100 + e27200)
     # EM EDIT
     qbided_full = qbinc * PT_qbid_rt
-    if pre_qbid_taxinc <= PT_qbid_taxinc_thd[MARS-1]:
-        qbided = qbided_full
+    if PT_qbid_taxinc_thd[MARS-1] > 0:
+        if pre_qbid_taxinc < PT_qbid_taxinc_thd[MARS-1]:
+            qbided = qbided_full
+        else:
+            qbided = max(0., qbided_full * (1 - (pre_qbid_taxinc - PT_qbid_taxinc_thd[MARS-1])/ PT_qbid_taxinc_gap[MARS-1]))
     else:
-        qbided = max(0., qbided_full * (1 - (pre_qbid_taxinc - PT_qbid_taxinc_thd[MARS-1])/ PT_qbid_taxinc_gap[MARS-1]))
+        qbided = qbided_full
     """
     if qbinc > 0. and PT_qbid_rt > 0.:
         qbid_before_limits = qbinc * PT_qbid_rt
@@ -1046,7 +1049,26 @@ def GainsTax(e00650, c01000, c23650, p23250, e01100, e58990, e00200,
     # final calculations done no matter what the value of hasqdivltcg
     c05100 = c24580  # because foreign earned income exclusion is assumed zero
     c05700 = 0.  # no Form 4972, Lump Sum Distributions
-    taxbc = c05700 + c05100
+
+    #Step-up-basis at death realization
+    if c04800 > CG_exclusions[MARS-1]:
+        wcg = p23250 * s006
+        w_share_cg = wcg/sum(wcg)
+        realization_at_death = 204253600000.0 * w_share_cg
+        above_exemp = max(0., realization_at_death - CG_exclusion_thd[MARS-1])
+        #applying capital gains rates to realization_at_death
+        death_thd1 = min(CG_brk1[MARS-1], above_exemp)
+        tax_death1 = death_thd1 * CG_rt1
+        death_thd2 = min(CG_brk2[MARS-1], above_exemp - tax_death1)
+        tax_death2 = death_thd2 * CG_rt2
+        death_thd3 = min(CG_brk3[MARS-1], above_exemp - (tax_death2 + tax_death1))
+        tax_death3 = death_thd3 * CG_rt3
+        death_thd4 = min(CG_brk4[MARS-1], above_exemp - (tax_death3 + tax_death2 + tax_death1))
+        tax_death4 = death_thd3 * CG_rt4
+        tot_realization_tax = tax_death4 + tax_death3 + tax_death2 + tax_death1
+        taxbc = c05700 + c05100 + tot_realization_tax
+    else:
+        taxbc = c05700 + c05100
     return (dwks10, dwks13, dwks14, dwks19, c05700, taxbc)
 
 
