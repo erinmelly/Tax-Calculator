@@ -1129,6 +1129,18 @@
       "form": {"2013-2013": "1040 line 56",
                "2014-2016": "1040 line 57"}
     },
+    "w_share_cg": {
+      "type": "float",
+      "desc": "weighted share of long-term capital gains (manual add to PUF)",
+      "form": {"2013-2013": "",
+               "2014-2016": ""}
+    },
+    "gains_at_death": {
+      "type": "float",
+      "desc": "imputed capital gains to be taxed at death (manual add to PUF)",
+      "form": {"2013-2013": "",
+               "2014-2016": ""}
+    },
     "ymod": {
       "type": "float",
       "desc": "search taxcalc/calcfunctions.py for how calculated and used",

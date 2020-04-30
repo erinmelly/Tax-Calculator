@@ -307,12 +307,18 @@ def CapGains(p23250, p22250, sep, ALD_StudentLoan_hc,
              ALD_BusinessLosses_c, MARS,
              e00900, e01100, e01200, e01400, e01700, e02000, e02100,
              e02300, e00400, e02400, c02900, e03210, e03230, e03240,
-             c01000, c23650, ymod, ymod1, invinc_agi_ec):
+             c01000, c23650, ymod, ymod1, invinc_agi_ec, gains_at_death,
+             CG_TaxAtDeath, CG_exclusion_thd):
     """
     CapGains function: ...
     """
+    # below only works on PUF that is modified to have create w_share_cg variable for tax at death imputation
+    if CG_TaxAtDeath is True:
+        includable_gains_at_death = max(0., gains_at_death - CG_exclusion_thd[MARS-1])
+    else:
+        includable_gains_at_death = 0.
     # net capital gain (long term + short term) before exclusion
-    c23650 = p23250 + p22250
+    c23650 = p23250 + p22250 + includable_gains_at_death
     # limitation on capital losses
     c01000 = max((-3000. / sep), c23650)
     # compute total investment income
@@ -1049,26 +1055,7 @@ def GainsTax(e00650, c01000, c23650, p23250, e01100, e58990, e00200,
     # final calculations done no matter what the value of hasqdivltcg
     c05100 = c24580  # because foreign earned income exclusion is assumed zero
     c05700 = 0.  # no Form 4972, Lump Sum Distributions
-
-    #Step-up-basis at death realization
-    if c04800 > CG_exclusions[MARS-1]:
-        wcg = p23250 * s006
-        w_share_cg = wcg/sum(wcg)
-        realization_at_death = 204253600000.0 * w_share_cg
-        above_exemp = max(0., realization_at_death - CG_exclusion_thd[MARS-1])
-        #applying capital gains rates to realization_at_death
-        death_thd1 = min(CG_brk1[MARS-1], above_exemp)
-        tax_death1 = death_thd1 * CG_rt1
-        death_thd2 = min(CG_brk2[MARS-1], above_exemp - tax_death1)
-        tax_death2 = death_thd2 * CG_rt2
-        death_thd3 = min(CG_brk3[MARS-1], above_exemp - (tax_death2 + tax_death1))
-        tax_death3 = death_thd3 * CG_rt3
-        death_thd4 = min(CG_brk4[MARS-1], above_exemp - (tax_death3 + tax_death2 + tax_death1))
-        tax_death4 = death_thd3 * CG_rt4
-        tot_realization_tax = tax_death4 + tax_death3 + tax_death2 + tax_death1
-        taxbc = c05700 + c05100 + tot_realization_tax
-    else:
-        taxbc = c05700 + c05100
+    taxbc = c05700 + c05100
     return (dwks10, dwks13, dwks14, dwks19, c05700, taxbc)
 
 
