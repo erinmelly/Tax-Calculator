@@ -340,7 +340,7 @@ def CapGains(p23250, p22250, sep, ALD_StudentLoan_hc,
     ymod2 = e00400 + (0.50 * e02400) - c02900
     ymod3 = (1. - ALD_StudentLoan_hc) * e03210 + e03230 + e03240
     ymod = ymod1 + ymod2 + ymod3
-    return (c01000, c23650, ymod, ymod1, invinc_agi_ec)
+    return (c01000, c23650, ymod, ymod1, invinc_agi_ec, gains_at_death)
 
 
 @iterate_jit(nopython=True)
