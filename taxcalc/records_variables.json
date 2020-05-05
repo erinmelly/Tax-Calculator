@@ -648,15 +648,15 @@
       "form": {"2018-20??": "specified in custom data"},
       "availability": ""
     },
-    "share_cg": {
+    "includable_gains_at_death": {
       "type": "float",
-      "desc": "share of long-term capital gains (manual add to PUF)",
+      "desc": "imputed capital gains to be taxed at death (manual add to PUF)",
       "form": {"2013-2013": "",
                "2014-2016": ""}
     },
     "gains_at_death": {
       "type": "float",
-      "desc": "imputed capital gains to be taxed at death (manual add to PUF)",
+      "desc": "imputed capital gains at death (manual add to PUF)",
       "form": {"2013-2013": "",
                "2014-2016": ""}
     }
