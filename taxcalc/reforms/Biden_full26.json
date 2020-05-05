@@ -1,0 +1,28 @@
+//	 Biden Tax Reform Proposals -- April 2020
+// 1. Restore top brackets/rates to pre-TCJA levels
+// 2. restore Pease limitations
+// 3. phase-out section 199A for taxpayers earning above $400,000 (PT_dedcap_thd, PT_dedcap_rt)
+// 4. tax capital gains as ordinary income above $10 million and tax at death
+// 5. extend childless EITC to workers above 65 years old
+// 6. limit the value of ID to 28% of value
+// 7. apply earnings above $400K to OASDI tax
+// 8. replace deductibility of IRA/DC pension contributions with 26% credit (IRADC_credit_rt)
+// 9. reinstate energy efficiency credit
+
+// Parameters created non-parametrically: IRADC_credit_rt
+
+{
+    "CG_brk4": {"2026": [1000000, 1000000, 1000000, 1000000, 1000000]},
+    "CG_rt3": {"2026": 0.396},
+    "CG_TaxAtDeath": {"2026": true},
+    "CG_exclusion_thd": {"2026": [100000, 200000, 100000, 100000, 200000]},
+    "EITC_MaxEligAge": {"2026": 125},
+    "ID_BenefitSurtax_trt": {"2026": 1.0},
+    "ID_BenefitSurtax_crt": {"2026": 0.28},
+    "ID_BenefitSurtax_Switch": {"2026": [true, true, false, true, true, true, true]},
+    "SS_Earnings_thd": {"2026": 400000},
+    "ALD_IRAContributions_hc": {"2026": 1.0},
+    "ALD_KEOGH_SEP_hc": {"2026": 1.0},
+    "IRADC_credit_rt": {"2026": 0.26},
+    "CR_ResidentialEnergy_hc": {"2026": 1.0}
+}
