@@ -123,6 +123,26 @@
         "invalid_action": "stop",
         "compatible_data": {"puf": true, "cps": true}
     },
+        "Add_Business_Effect": {
+        "long_name": "Adding imputed burden from business side provisions to 'combined' taxpayer burden",
+        "description": "Not part of current law. If this value is true, adds imputed burdens to taxpayer liability, from modified PUF. Used for distribution tables",
+        "section_1": "Personal Income",
+        "section_2": "",
+        "irs_ref": "Imputed value from modified PUF",
+        "notes": "",
+        "value_yrs": [2013],
+        "indexable": false,
+        "indexed": false,
+        "vi_name": "",
+        "vi_vals": [],
+        "value_type": "boolean",
+        "value": [false],
+        "valid_values": {"min": false, "max": true},
+        "invalid_minmsg": "",
+        "invalid_maxmsg": "",
+        "invalid_action": "stop",
+        "compatible_data": {"puf": true, "cps": true}
+    },
 
     "AMEDT_ec": {
         "long_name": "Additional Medicare tax earnings exclusion",
