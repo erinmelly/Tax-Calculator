@@ -659,6 +659,12 @@
       "desc": "imputed capital gains at death (manual add to PUF)",
       "form": {"2013-2013": "",
                "2014-2016": ""}
+    },
+    "taxliab_inc": {
+      "type": "float",
+      "desc": "imputed tax liability increase from business taxtion increases (manual add to PUF)",
+      "form": {"2013-2013": "",
+               "2014-2016": ""}
     }
   },
   "calc": {

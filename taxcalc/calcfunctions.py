@@ -1760,7 +1760,7 @@ def CTC_new(CTC_new_c, CTC_new_rt, CTC_new_c_under5_bonus,
 @iterate_jit(nopython=True)
 def IITAX(c59660, c11070, c10960, personal_refundable_credit, ctc_new, rptc,
           c09200, payrolltax, 
-          eitc, refund, iitax, combined, IRADC_credit_amt):
+          eitc, refund, iitax, combined, IRADC_credit_amt, taxliab_inc):
     """
     Computes final taxes.
     """
@@ -1768,8 +1768,8 @@ def IITAX(c59660, c11070, c10960, personal_refundable_credit, ctc_new, rptc,
     refund = (eitc + c11070 + c10960 +
               personal_refundable_credit + ctc_new + rptc + IRADC_credit_amt)
     iitax = c09200 - refund
-    combined = iitax + payrolltax
-    return (eitc, refund, iitax, combined)
+    combined = iitax + payrolltax + taxliab_inc
+    return (eitc, refund, iitax, combined, taxliab_inc)
 
 
 @JIT(nopython=True)
