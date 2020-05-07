@@ -339,6 +339,29 @@ class Records(Data):
         self.housing_ben *= gfv['ABENHOUSING']
         self.tanf_ben *= gfv['ABENTANF']
         self.vet_ben *= gfv['ABENVET']
+
+        if year >= 2021:
+            # create variables for capital gains at death
+            # share of capital gains
+            self.ltgains_weight = ((self.p23250 * self.s006) /
+                                   np.sum(self.p23250 * self.s006))
+            self.ltgains_weight[self.p23250 > 0] = (
+                (self.p23250[self.p23250 > 0] * self.s006[self.p23250 > 0])
+                / np.sum(self.p23250[self.p23250 > 0] *
+                         self.s006[self.p23250 > 0]))
+            # assign total realization at death revenue from JCT to
+            # taxpayers based on capital gains weight
+            # NOTE: change this value per JCT estimate, per year
+            realization_at_death = {
+                2021: 204253570343, 2022: 215627184994,
+                2023: 226688939254, 2024: 235220544654,
+                2025: 243736672365, 2026: 245533163473,
+                2027: 254865207631, 2028: 264380671657,
+                2029: 274178230759, 2030: 284077457991}
+            self.gains_at_death = ((
+                self.ltgains_weight * realization_at_death[year]) /
+                                   (self.s006))
+
         # remove local dictionary
         del gfv
 
@@ -351,6 +374,7 @@ class Records(Data):
         if self.ADJ.size > 0:
             # Interest income
             self.e00300 *= self.ADJ['INT{}'.format(year)][self.agi_bin].values
+
 
     def _read_ratios(self, ratios):
         """
