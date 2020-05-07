@@ -1772,8 +1772,6 @@ def IITAX(c59660, c11070, c10960, personal_refundable_credit, ctc_new, rptc,
         combined = iitax + payrolltax + taxliab_inc
     else:
         combined = iitax + payrolltax 
-
-    combined = iitax + payrolltax + taxliab_inc
     return (eitc, refund, iitax, combined, taxliab_inc)
 
 
