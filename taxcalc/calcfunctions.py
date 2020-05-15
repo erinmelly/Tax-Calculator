@@ -790,7 +790,7 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
            PT_qbid_rt, PT_qbid_taxinc_thd, PT_qbid_taxinc_gap,
            PT_qbid_w2_wages_rt,
            PT_qbid_alt_w2_wages_rt, PT_qbid_alt_property_rt,
-           c04800, qbided):
+           c04800, qbided, PT_qbid_phaseout_thd, PT_qbid_phaseout_gap):
     """
     Calculates taxable income, c04800, and
     qualified business income deduction, qbided.
@@ -800,6 +800,20 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
     # calculate qualified business income deduction
     qbided = 0.
     qbinc = max(0., e00900 + e26270 + e02100 + e27200)
+    qbided_full = qbinc * PT_qbid_rt
+    if PT_qbid_phaseout_thd[MARS-1] > 0:
+        if pre_phaseout_taxinc < PT_qbid_phaseout_thd[MARS-1]:
+            qbided = qbided_full
+        else:
+            qbided = max(0., qbided_full * (1 - (pre_qbid_taxinc - PT_qbid_phaseout_thd[MARS-1])/ PT_qbid_phaseout_gap[MARS-1]))
+    else:
+        qbided = qbided_full
+    """
+    Note:
+    The data for the wage, SSTB and income limitations are not available, so this limitation is not
+    currently modeled in current law.
+
+
     if qbinc > 0. and PT_qbid_rt > 0.:
         qbid_before_limits = qbinc * PT_qbid_rt
         lower_thd = PT_qbid_taxinc_thd[MARS - 1]
@@ -831,6 +845,7 @@ def TaxInc(c00100, standard, c04470, c04600, MARS, e00900, e26270,
                     prt = (pre_qbid_taxinc - lower_thd) / pre_qbid_taxinc_gap
                     adj = prt * (qbid_adjusted - cap_adjusted)
                     qbided = qbid_adjusted - adj
+        """
         # apply taxinc cap (assuning cap rate is equal to PT_qbid_rt)
         net_cg = e00650 + c01000  # per line 34 in 2018 Pub 535 Worksheet 12-A
         taxinc_cap = PT_qbid_rt * max(0., pre_qbid_taxinc - net_cg)
