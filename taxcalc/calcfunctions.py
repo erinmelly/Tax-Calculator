@@ -1760,7 +1760,8 @@ def CTC_new(CTC_new_c, CTC_new_rt, CTC_new_c_under5_bonus,
 @iterate_jit(nopython=True)
 def IITAX(c59660, c11070, c10960, personal_refundable_credit, ctc_new, rptc,
           c09200, payrolltax, 
-          eitc, refund, iitax, combined, IRADC_credit_amt, taxliab_inc, Add_Business_Effect):
+          eitc, refund, iitax, combined, IRADC_credit_amt, business_burden, 
+          Business_Effect_Table_combined):
     """
     Computes final taxes.
     """
@@ -1768,11 +1769,11 @@ def IITAX(c59660, c11070, c10960, personal_refundable_credit, ctc_new, rptc,
     refund = (eitc + c11070 + c10960 +
               personal_refundable_credit + ctc_new + rptc + IRADC_credit_amt)
     iitax = c09200 - refund
-    if Add_Business_Effect is True:
-        combined = iitax + payrolltax + taxliab_inc
+    if Business_Effect_Table_combined is True:
+        combined = iitax + payrolltax + business_burden
     else:
         combined = iitax + payrolltax 
-    return (eitc, refund, iitax, combined, taxliab_inc)
+    return (eitc, refund, iitax, combined)
 
 
 @JIT(nopython=True)
@@ -1993,7 +1994,8 @@ def ExpandIncome(e00200, pencon_p, pencon_s, e00300, e00400, e00600,
 
 
 @iterate_jit(nopython=True)
-def AfterTaxIncome(combined, expanded_income, aftertax_income):
+def AfterTaxIncome(combined, expanded_income, aftertax_income,
+    Business_Effect_Table_expinc, corp_taxliab):
     """
     Calculates after-tax expanded income.
 
@@ -2006,5 +2008,9 @@ def AfterTaxIncome(combined, expanded_income, aftertax_income):
     -------
     aftertax_income: expanded_income minus combined
     """
+    if Business_Effect_Table_expinc is True:
+        expanded_income = expanded_income + corp_taxliab
+    else:
+        expanded_income = expanded_income
     aftertax_income = expanded_income - combined
     return aftertax_income

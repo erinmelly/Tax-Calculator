@@ -341,17 +341,16 @@ class Records(Data):
         self.vet_ben *= gfv['ABENVET']
 
         if year >= 2021:
-            # create variables for capital gains at death
-            # share of capital gains
+        # create variables for capital gains at death
+            # taxpayers' share of capital gains
             self.ltgains_weight = ((self.p23250 * self.s006) /
                                    np.sum(self.p23250 * self.s006))
             self.ltgains_weight[self.p23250 > 0] = (
                 (self.p23250[self.p23250 > 0] * self.s006[self.p23250 > 0])
                 / np.sum(self.p23250[self.p23250 > 0] *
                          self.s006[self.p23250 > 0]))
-            # assign total realization at death revenue from JCT to
-            # taxpayers based on capital gains weight
-            # NOTE: change this value per JCT estimate, per year
+            # assign total realization at death revenue to taxpayers based on ltgains_weight
+            # NOTE: values in dictionary are the annual JCT estimates
             realization_at_death = {
                 2021: 204253570343, 2022: 215627184994,
                 2023: 226688939254, 2024: 235220544654,
@@ -361,6 +360,63 @@ class Records(Data):
             self.gains_at_death = ((
                 self.ltgains_weight * realization_at_death[year]) /
                                    (self.s006))
+            # create variables that distribute the estimated burden from Biden Business reform
+            # NOTE: to be used in creation of distribution tables
+        
+            # taxperys' share of labor (wages)
+            self.wage_weight = ((self.e00200 * self.s006) /
+                                   np.sum(self.e00200 * self.s006))
+            self.wage_weight[self.e00200 > 0] = (
+                (self.e00200[self.e00200 > 0] * self.s006[self.e00200 > 0])
+                / np.sum(self.e00200[self.e00200 > 0] *
+                         self.s006[self.e00200 > 0]))
+            # define capital
+            self.capital = self.p22250 + self.p23250 + self.e00650 + self.e00650 + self.e00300 + self.e02000
+             # taxpayers' share of capital 
+            self.capital_weight = ((self.capital * self.s006) /
+                                   np.sum(self.capital * self.s006))
+            self.capital_weight[self.capital > 0] = (
+                (self.capital[self.capital > 0] * self.s006[self.capital > 0])
+                / np.sum(self.capital[self.capital > 0] *
+                         self.s006[self.capital > 0]))
+            # business_revenue is the annual estimated revenue increase from Biden business tax reforms
+            business_revenue = {
+                2021: 166600000000, 2022: 175800000000,
+                2023: 186300000000, 2024: 196200000000,
+                2025: 205600000000, 2026: 207800000000,
+                2027: 217500000000, 2028: 222700000000,
+                2029: 228800000000, 2030: 235600000000
+                   }
+            # corp_tax_revenue is total estimated corporate tax liability (IRS)
+            # NOTE: if assigning business tax burden to taxpyers, must also add corp. tax revenue to income
+            corp_tax_revenue = {
+                2021: 257000000000, 2022: 292000000000,
+                2023: 334000000000, 2024: 362000000000,
+                2025: 386000000000, 2026: 385000000000,
+                2027: 382000000000, 2028: 290000000000,
+                2029: 398000000000, 2030: 406000000000
+                   }
+            # assign business_revenue and corp_tax_revenue based on labor/capital weights
+            # distribute 20% to labor (wages) and 80% to capital
+            wage_rev_share = 0.2 * business_revenue[year]
+            corp_taxliab_wage_share = 0.2 * corp_tax_revenue[year]
+            cap_rev_share = 0.8 * business_revenue[year]
+            corp_taxliab_cap_share = 0.8 * corp_tax_revenue[year]
+
+            self.busburden_w = ((
+                self.wage_weight * wage_rev_share) /
+                                   (self.s006))
+            self.busburden_c = ((
+                self.capital_weight * cap_rev_share) /
+                                   (self.s006))
+            self.corp_taxliab_w = ((
+                self.wage_weight * corp_taxliab_wage_share) /
+                                   (self.s006))
+            self.corp_taxliab_c = ((
+                self.wage_weight * corp_taxliab_cap_share) /
+                                   (self.s006))
+            self.business_burden = self.busburden_w + self.busburden_c
+            self.corp_taxliab = self.corp_taxliab_w + self.corp_taxliab_c
 
         # remove local dictionary
         del gfv

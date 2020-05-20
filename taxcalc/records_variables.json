@@ -660,12 +660,17 @@
       "form": {"2013-2013": "",
                "2014-2016": ""}
     },
-    "taxliab_inc": {
+    "business_burden": {
       "type": "float",
-      "desc": "imputed tax liability increase from business taxtion increases (manual add to PUF)",
+      "desc": "imputed tax liability increase (to labor and capital) from Biden's business tax reforms (manual add to PUF)",
       "form": {"2013-2013": "",
                "2014-2016": ""}
-    }
+    },
+    "corp_taxliab": {
+      "type": "float",
+      "desc": "imputed corporate taxes paid; to add as income factor when distributing business_burden (manual add to PUF)",
+      "form": {"2013-2013": "",
+               "2014-2016": ""}
   },
   "calc": {
     "niit": {
