@@ -1,0 +1,396 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"corp",
+				"corp_taxliab_c"
+			],
+			[
+				"busin",
+				"business_revenue"
+			],
+			[
+				"busines",
+				"business_burden"
+			],
+			[
+				"bu",
+				"business_burden"
+			],
+			[
+				"expanded",
+				"expanded_income"
+			],
+			[
+				"include",
+				"includable_gains_at_death"
+			],
+			[
+				"MARS",
+				"MARS-1"
+			],
+			[
+				"CG_br",
+				"CG_brk1"
+			],
+			[
+				"PT_qbid",
+				"PT_qbid_taxinc_gap"
+			],
+			[
+				"qbid",
+				"qbided_full"
+			],
+			[
+				"qb",
+				"qbinc"
+			],
+			[
+				"__",
+				"__records"
+			],
+			[
+				"perso",
+				"personal_refundable_credit"
+			],
+			[
+				"highest_rate",
+				"highest_rate_incremental_tax2"
+			],
+			[
+				"hi_",
+				"hi_incremental_rate2"
+			],
+			[
+				"calc_",
+				"_calc_one_year"
+			],
+			[
+				"c04",
+				"c04800"
+			],
+			[
+				"II_",
+				"II_rt7"
+			],
+			[
+				"PT_ded",
+				"PT_dedcap_rt"
+			],
+			[
+				"PT_brk",
+				"PT_brk6"
+			],
+			[
+				"PT_br",
+				"PT_brk7"
+			],
+			[
+				"9e",
+				"9e99"
+			],
+			[
+				"gross_",
+				"gross_cgd_p"
+			],
+			[
+				"i",
+				"if\tIf Condition"
+			]
+		]
+	},
+	"buffers":
+	[
+	],
+	"build_system": "",
+	"build_system_choices":
+	[
+	],
+	"build_varint": "",
+	"command_palette":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+			[
+				"package control: ins",
+				"Package Control: Install Package"
+			],
+			[
+				"install",
+				"Install Package Control"
+			]
+		],
+		"width": 0.0
+	},
+	"console":
+	{
+		"height": 0.0,
+		"history":
+		[
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/policy_current_law.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/behresp/behavior.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/taxcalc/calcfunctions.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/records_variables.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/records.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/calcfunctions.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/taxcalc/records_variables.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/taxcalc/records.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/behresp/behavior.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/Behavioral-Responses/behresp/behavior.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/taxcalc/parameters.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/ParamTools/paramtools/parameters.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/taxcalc/policy_current_law.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/taxcalc/reforms/Biden_distributional.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_dist_table/taxcalc/reforms/Biden.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Biden.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Biden_full.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Biden_full26.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/utils.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Biden1.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Biden2.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/notebooks/Biden Tax Plan.ipynb",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/data.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/__init__.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/reformA.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/calculator.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/decorators.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Biden_26on.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Sanders.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/qbid_test",
+		"/C/Users/erin.melly/Desktop/Sanders.json",
+		"/C/Users/erin.melly/Desktop/calcfunctions.py",
+		"/C/Users/erin.melly/Desktop/test.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/taxcalc/reforms/Biden.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/validation/taxsim27/taxsim_input.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Pete.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/Warren.json",
+		"/C/Users/erin.melly/AppData/Local/Microsoft/Windows/INetCache/Content.Outlook/A3YRYZKY/taxbrackets.r",
+		"/C/Users/erin.melly/Desktop/Tax-Calculator/taxcalc/PT_qbid_repeal.py",
+		"/C/Users/erin.melly/Desktop/Tax-Calculator/taxcalc/calcfunctions.py",
+		"/C/Users/erin.melly/Desktop/Tax-Calculator/taxcalc/policy_current_law.json",
+		"/C/Users/erin.melly/Desktop/python",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/reformC.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/recipe06.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/PT_qbid_repeal.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Cost-of-Capital-Calculator/ccc/get_taxcalc_rates.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/param_test.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.6.0/taxcalc/calcfunctions.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Cost-of-Capital-Calculator/example.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Cost-of-Capital-Calculator/ccc/parameters.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/pt_repeal.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/run_warren.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/new_json.py",
+		"/C/Users/erin.melly/Desktop/GitHub/plotting/data.py",
+		"/C/Users/erin.melly/Desktop/GitHub/plotting/bokeh.ipynb",
+		"/C/Users/erin.melly/Desktop/GitHub/plotting/__pycache__/data.cpython-36.pyc",
+		"/C/Users/erin.melly/Desktop/GitHub/plotting/README.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/policy.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/recipe05.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/run_warren",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/run.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/run_warren.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/recipe00.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/recipe01.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/docs/cookbook/test_recipes.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/2017_law.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/SandersDeFazio.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/taxcalc/policy_current_law.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/taxcalc/calculator.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/taxcalc/policy.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/taxcalc/calcfunctions.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0_edit/taxcalc/policy.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0_edit/taxcalc/policy_current_law.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/docs/cookbook/recipe05.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/docs/cookbook/recipe06.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/docs/cookbook/recipe01.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.7.0/taxcalc/parameters.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator-dem_proj/taxcalc/calcfunctions.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator-dem_proj/docs/cookbook/recipe06.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator-dem_proj/taxcalc/calcfunctions_sanders.py",
+		"/C/Users/erin.melly/AppData/Local/Continuum/anaconda3/Scripts/jupyter-notebook-script.py",
+		"/C/Users/erin.melly/Desktop/GitHub/RA-Training/version_control/practice/animals.html",
+		"/C/Users/erin.melly/Desktop/GitHub/RA-Training/README.md",
+		"/C/Users/erin.melly/Desktop/GitHub/burke/README.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_edit/taxcalc/policy_current_law.json",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_edit/taxcalc/calcfunctions.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Cruncher/taxcrunch/multi_cruncher.py",
+		"/C/Users/erin.melly/AppData/Local/Continuum/anaconda3/pkgs/.install.py",
+		"/C/Users/erin.melly/AppData/Local/Continuum/anaconda3/pkgs/knownfolders.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.2.0/new_json.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.2.0/taxcalc/reforms/REFORMS.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Behavioral-Responses/behresp/behavior.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.4.2/taxcalc/reforms/TCJA.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/parameters.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/assumptions/ASSUMPTIONS.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.4.2/taxcalc/reforms/REFORMS.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/reforms/REFORMS.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/taxcalc/taxcalcio.py",
+		"/C/Users/erin.melly/Dropbox/TCJA info/notebook & tax calc code/distributional_code.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/microdf/microdf/charts.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Cruncher/taxcrunch/cruncher.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Cruncher/docs/INPUT_INSTRUCTIONS.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Cruncher/setup.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Cruncher/compconfig/compconfig/functions.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Cruncher/compconfig/setup.py",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/RELEASES.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator 2.2.0/RELEASES.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator_new/RELEASES.md",
+		"/C/Users/erin.melly/Desktop/GitHub/Tax-Calculator/README.md",
+		"/C/Users/erin.melly/Desktop/GitHub/microdf/microdf/income_measures.py",
+		"/C/Users/erin.melly/Desktop/GitHub/microdf/microdf/custom_taxes.py",
+		"/C/Users/erin.melly/Desktop/GitHub/microdf/microdf/constants.py",
+		"/C/Users/erin.melly/Desktop/GitHub/microdf/microdf/charts.py",
+		"/C/Users/erin.melly/Desktop/GitHub/microdf/microdf/agg.py",
+		"/C/Users/erin.melly/Desktop/GitHub/microdf/microdf/chart_utils.py",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI-EG/src/visualization.r",
+		"/C/Users/erin.melly/Desktop/Sports Taxation Data/NBA_MERGE1",
+		"/N/Kallen/VAT stuff/merger2.R",
+		"/N/Nathan/Training/Nathan_is_coming/GSS.r",
+		"/C/Users/erin.melly/Dropbox/AEI-Brookings Carbon Tax Project/Paper on Distributional Impacts for IMF/maps/Energy related CO2 emissions in 2010 (metric tons per million do by State.ptm",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI-EG/generate_figures.r",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI-EG/gen_figures.r",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI/PCI-China/src/visualization.r",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI/PCI-China/generate_figures.r",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI-EG/src/compile_model_results.py",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI-EG/compile_model_results.py",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI-EG/compile_model_results.sh",
+		"/C/Users/erin.melly/Desktop/GitHub/PCI-EG/src/hyper_parameters.py"
+	],
+	"find":
+	{
+		"height": 27.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": false,
+		"find_history":
+		[
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"sheets":
+			[
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 27.0
+	},
+	"input":
+	{
+		"height": 0.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"pinned_build_system": "Packages/Python/Python.sublime-build",
+	"project": "policy_current_law.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"last_filter": "",
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"selected_group": 0,
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 259.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
